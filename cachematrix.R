@@ -1,8 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
-
+#This function creates a special matrix object which returns the inversed matrix when it is already cached. 
 makeCacheMatrix <- function(x = numeric()) {
   m <- NULL
   set <- function(y) {
