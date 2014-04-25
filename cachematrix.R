@@ -1,7 +1,7 @@
-##################################################################
+#################################################################
 ## Programming assignment 2
 ## Coursera course programming in R
-##################################################################
+#################################################################
 
 #The function 'makeVector' takes the argument x of type matrix. 
 #It creates a special matrix object and a list of 4 functions. 
@@ -28,8 +28,8 @@ makeCacheMatrix <- function(x = matrix()) {          #the input of the function 
 
 #The function 'cacheSolve'calculates the inverse of the special matrix created with the function 'makeCacheMatrix'
 #It first checks to see if the inverse of the matrix has already been calculated before. If so, it gets the value of the
-#inversed matrix from the cache and skips the computation. Otherwise, it calculates the mean of the data and sets the value of 
-#the involve of the matrix in the cache via the setInverse function which was defined in the function makeCacheMatrix
+#inversed matrix from the cache and skips the computation. Otherwise, it calculates the involved matrix and sets the value of 
+#the involved matrix in the cache via the setInverse function which was defined in the function makeCacheMatrix
 #The input is expecteing a special matrix made from the function "makeCacheMatrix"
 
 cacheSolve <- function(x, ...) {
@@ -40,7 +40,7 @@ cacheSolve <- function(x, ...) {
             cat("Process Time", proc.time() - ptm) #print processing time
             return(m)                              #just return the value stored in cache (no computation needed)
         }
-    data <- x$get()                                #if there's no cache
+    data <- x$get()                                #if the cache is not empty, 
     m <- solve(data, ...)                          #the inverse of the matrix is computed
     x$setInverse(m)                                #save the result back to the cache of x
     cat("Process Time", proc.time() - ptm)         #print processing time
